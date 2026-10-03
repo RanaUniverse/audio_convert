@@ -1,6 +1,9 @@
-def main():
-    print("Hello from audio-convert!")
+import subprocess
 
+result = subprocess.run(
+    ["ffmpeg", "-version"],
+    capture_output=True,
+    text=True,
+)
 
-if __name__ == "__main__":
-    main()
+print(result.stdout)
